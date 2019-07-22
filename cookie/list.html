@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+   /* {
+        margin:0;
+        padding:0;
+    }*/
+    html,body{
+        width:100%;
+        height: 100%;
+        background: url("../img/back6.png");
+        
+    }
+    li{
+        list-style: none;
+    }
+    #list{
+        width:1500px;
+        height: 400px;
+        margin:100px auto;
+        display: flex;
+        justify-content: space-around;
+        /* background:url("../img/back3.png") no-repeat;
+        background-size: cover;  */
+        
+
+    }
+    #list>li{
+        width:250px;
+        height:100%;
+        
+    }
+    #list>li.box{
+        width:250px;
+        height:200px;
+        background: #000;
+        
+    }
+    #list>p{
+        width:100%;
+        height:12.5%;
+        font-size : 14px;
+        line-height: 12.5%;
+        color:orange;
+        margin-top:10px;
+
+    }
+    #list>li:hover{
+        box-shadow: 2px 2px 2px #ccc;
+        border:1px solid #ccc;
+    }
+    #list li .price{
+        color:red;
+    }
+    #list li .title{
+        color:bisque;
+    }
+    #list li .from{
+        color:grey;
+    }
+</style>
+<body>
+    <ul id = "list">
+        <li>
+            <!--<div ></div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </li>
+        <li>
+            <div></div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </li>
+        <li>
+            <div></div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </li>
+        <li>
+            <div></div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </li>
+        <li>
+            <div></div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </li>-->
+    </ul>
+</body>
+</html>
+<script>
+     var phones = [
+        {
+            "id": "1",
+            "title": "新合作国际大酒店",
+            "price": "￥9999",
+            "img": "img/1.jpg",
+            "commit":"500+条评价",
+            "from":"中国·上海"
+        }, {
+            "id": "2",
+            "title": "复古中式酒店 ",
+            "price": "￥999",
+            "img": "img/2.jpg",
+            "commit":"500+条评价",
+            "from":"中国·北京"
+        }, {
+            "id": "3",
+            "title": "广州国际酒店 ",
+            "price": "￥999",
+            "img": "img/3.jpg",
+            "commit":"500+条评价",
+            "from":"中国·广州"
+        }, {
+            "id": "4",
+            "title": "四川·九寨沟旅游景区",
+            "price": "￥9999",
+            "img": "img/4.jpg",
+            "commit":"500+条评价",
+            "from":"中国·四川"
+        }, {
+            "id": "5",
+            "title": "上海迪士尼乐园",
+            "price": "￥5300",
+            "img": "img/5.jpg",
+            "commit":"500+条评价",
+            "from":"中国·上海"
+        }];
+        //定义一个空字符串
+        var str = "";
+        //遍历进行页面渲染
+        for(var i = 0;i<phones.length;i++){
+            str+='<li data-id = '+phones[i].id+'><div><a href = "##"><img id = "img'+phones[i].id+'"src = '+phones[i].img+'></a></div><p class = "price">'+phones[i].price+'</p><p class = "title"> '+phones[i].title+'</p><p class = "commit">'+phones[i].commit+'</p><p class = "from">'+phones[i].from+'</p></li>';
+        }
+        //获取到list
+        var oList = document.getElementById("list");
+        //动态添加内容
+        oList.innerHTML = str;
+        //   var Obox = document.getElementById("img01");
+        // //   console.log(Obox);
+        // Obox.onclick = function(){
+        //     location.href = "details1.html";
+        // }
+        oList.addEventListener("click",function(){
+            var e = e || event;//兼容
+            var target = e.target || e.srcElement;//target兼容
+            if(target.TagName = "IMG"){//如果点击到图片跳转页面到详情页
+                var id = target.parentNode.parentNode.parentNode.getAttribute("data-id");
+                // console.log(id);
+                location.href = "details1.html?id="+id;
+            }
+        })
+
+</script>   

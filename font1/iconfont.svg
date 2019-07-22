@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="fanhuidingbu" unicode="&#58885;" d="M6.071146 896l1011.857708 0 0-1024-1011.857708 0 0 1024ZM512 802.909091 228.679842 438.640316 370.339921 438.640316 370.339921 94.608696 653.660079 94.608696 653.660079 438.640316 795.320158 438.640316Z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="fanhuidingbu1" unicode="&#59465;" d="M81.92 896h860.16a81.92 81.92 0 0 0 81.92-81.92v-860.16a81.92 81.92 0 0 0-81.92-81.92H81.92a81.92 81.92 0 0 0-81.92 81.92V814.08a81.92 81.92 0 0 0 81.92 81.92z m213.54496-669.56288l234.00448 249.22112L762.6752 227.29728a30.72 30.72 0 1 1 44.78976 42.05568L551.86432 541.56288a30.72 30.72 0 0 1-44.78976 0L250.66496 268.4928a30.72 30.72 0 1 1 44.8-42.05568z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

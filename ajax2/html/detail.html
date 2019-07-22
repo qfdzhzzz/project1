@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" />
+
+</head>
+
+<body>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_Modal">添加数据</button>
+    <table class="table table-striped table-bordered" id="js_tab">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>景区名称</th>
+                <th>景区信息</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <!-- 添加题目模态框 -->
+    <div class="modal fade" id="add_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">添加景区信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="js_subject">景区</label>
+                            <input type="text" class="form-control" id="js_subject" placeholder="请输入相关题目">
+                        </div>
+                        <div class="form-group">
+                            <label for="js_answer">信息</label>
+                            <textarea class="form-control" rows="3" id="js_answer"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="js_btn" data-dismiss="modal">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 修改模态框 -->
+    <div class="modal fade" id="modify_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">修改景区信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="hidden" id="bid">
+                        <div class="form-group">
+                            <label for="js_modify_subject">景区</label>
+                            <input type="text" class="form-control" id="js_modify_subject" placeholder="请输入相关题目">
+                        </div>
+                        <div class="form-group">
+                            <label for="js_modify_answer">信息</label>
+                            <textarea class="form-control" rows="3" id="js_modify_answer"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="js_modify_btn" data-dismiss="modal">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="../js/lib/jquery-1.11.3.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../js/lib/ajax.js"></script>
+<script src="../js/js/detail/index.js"></script>

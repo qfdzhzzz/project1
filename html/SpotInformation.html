@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="../font1/iconfont.css">
+    <title>SpotInformation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        #nav {
+            width: 100%;
+            height: 80px;
+            background: rgba(0, 178, 238, .6);
+            position: fixed;
+            z-index: 20;
+        }
+
+        #logo {
+            width: 24%;
+            height: 80px;
+            float: left;
+            padding-left: 5%;
+        }
+
+        #logo>img {
+            display: block;
+            width: 100px;
+            height: 80px;
+
+        }
+
+        #navchoose {
+            width: 47.5%;
+            height: 80px;
+            float: left;
+        }
+
+        #navchoose>li {
+            width: 12.5%;
+            height: 80px;
+            float: left;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        #navchoose>li:hover {
+            background: #fff;
+        }
+
+        #navchoose>li>a {
+            font-size: 14px;
+            color: #fff;
+            /* text-align: center; */
+            line-height: 80px;
+        }
+
+        #navchoose>li:hover a {
+            color: #000;
+            text-shadow: 2px 2px 2px red;
+        }
+
+        #back {
+            width: 100%;
+            /* height: 700px; */
+            background: #fff;
+            background: url("../img/back.png");
+            /* position: relative; */
+
+        }
+
+        #back #vip {
+            position: fixed;
+            top: 100px;
+            right: 0;
+            z-index: 10;
+        }
+
+        #banner {
+            width: 1000px;
+            height: 500px;
+            /* margin: 30px auto; */
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #banner>ul {
+            height: 500px;
+            position: absolute;
+        }
+
+        #banner>ul>li {
+            float: left;
+
+        }
+
+        #banner>ul>li>img {
+            width: 1000px;
+            height: 500px;
+        }
+
+
+        #dir>a {
+            position: absolute;
+            /* width: 80px;
+    height: 40px; */
+            text-align: center;
+            /* line-height: 30px; */
+            background: rgba(0, 0, 0, .5);
+            color: #fff;
+            font-size: 100px;
+            font-weight: 100;
+            top: 130px;
+            z-index: 1;
+        }
+
+        #dir>a:hover {
+            color: gold;
+        }
+
+        #dir>a:nth-child(1) {
+            left: 0;
+        }
+
+        #dir>a:nth-child(2) {
+            right: 0;
+        }
+
+        #circular {
+            position: absolute;
+            left: 40%;
+            bottom: 10px;
+        }
+
+        #circular>a {
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border-radius: 50%;
+            float: left;
+            margin: 0 10px;
+        }
+
+        #circular>.active {
+            background: #c33;
+        }
+
+        .spotinformation {
+            width: 100%;
+            height: 200px;
+            background: url("../img/back.png");
+            padding-top: 40px;
+        }
+
+        .spotinformation .spotinf {
+            width: 1000px;
+            height: 200px;
+            /* background: #000; */
+            margin-left: 275px;
+            background: url(../img/xinxi4.png) no-repeat 330px 0;
+            /* background-position: 0 0 0 500; */
+        }
+
+        .spotinformation .spotinf>p {
+            width: 600px;
+            line-height: 30px;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .recommend {
+            width: 100%;
+            height: 50px;
+            background: url("../img/back.png");
+            /* padding-top:30px; */
+        }
+
+        .recommend>img {
+            height: 50px;
+            margin-left: 270px;
+        }
+
+        .main {
+            width: 100%;
+            /* height: 2000px; */
+            background: url("../img/back3.png");
+            background-size: cover;
+            padding-top: 30px;
+        }
+
+        .main>div {
+            width: 1000px;
+            height: 300px;
+            background: url("../img/back.png");
+            transform: translateX(275px);
+            margin-bottom: 30px;
+            position: relative;
+
+        }
+
+        .main .main1 {
+            width: 400px;
+            height: 50px;
+
+        }
+
+        .main .main1>span:nth-child(1) {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: goldenrod;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: 900;
+            float: left;
+        }
+
+        .main .main1>span:nth-child(2) {
+            display: block;
+            width: 300px;
+            height: 50px;
+            float: left;
+            line-height: 50px;
+            font-size: 30px;
+            color: #000;
+            margin-left: 50px;
+            text-shadow: 3px 3px 3px goldenrod
+        }
+
+
+        .main .imain p {
+            width: 600px;
+            height: 250px;
+            font-size: 16px;
+            line-height: 40px;
+            color: orange;
+        }
+        .main .imain p:hover{
+            text-shadow:2px 2px 2px #000 ;
+        }
+        .main .imain .big{
+            display: block;
+            width:350px;
+            height: 300px;
+            position: absolute;
+            top:0;
+            right: 0;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .main .imain .big>img {
+            
+            width: 350px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            transition: 1s;
+            
+        }
+
+        .main .imain .big>img:hover {
+            transform: scale(1.5);
+        }
+
+        .footer {
+            width: 100%;
+            height: 500px;
+            background: url("../img/back.png");
+            /* background-size: cover; */
+        }
+
+        .footer>dl {
+            width: 100%;
+            height: 50px;
+            background: url("../img/back8.png");
+        }
+
+        .footer>dl>img {
+            width: 200px;
+            height: 50px;
+            margin-left: 600px;
+        }
+
+        .footer {
+            width: 100%;
+            height: 225px;
+            /* background: #222; */
+            padding-top: 30px;
+        }
+
+        .footer>ul {
+            width: 100%;
+            height: 150px;
+            margin: 0 auto;
+            /* background: red; */
+            /* display: flex; */
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+        }
+
+        .footer>ul>li {
+            width: 14%;
+            height: 100px;
+            float: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .iconfont {
+            display: block;
+            font-size: 50px;
+            color: grey;
+        }
+
+        .footer>ul>li:hover {
+            background: rgba(0, 0, 0, .5)
+        }
+
+        .footer>ul>li:hover .iconfont {
+            color: goldenrod;
+        }
+
+        .footer>ul>li:hover a {
+            color: #000;
+        }
+        #designer {
+            width: 100%;
+            height: 50px;
+        }
+
+        #designer>span {
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin-left: 600px;
+            font-size: 20px;
+            float: left;
+            text-shadow: 2px 2px 2px goldenrod;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <div id="logo">
+            <img src="../img/logo1.jpg" alt="">
+        </div>
+        <ul id="navchoose">
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="#">景区概况</a></li>
+            <li><a href="TravelStrategy.html">旅游攻略</a></li>
+            <li><a href="../cookie/list.html">网上预订</a></li>
+            <li><a href="../ajax/index.html">用户注册</a></li>
+            <li><a href="../ajax2/index.html">管理员注册</a></li>
+        </ul>
+        <!-- <div id = "corner">
+            <span><a href = "#">&gt;</a></span>
+        </div> -->
+    </div>
+    <div id="back">
+        <img id="vip" src="../img/vip.png">
+        <div id="banner">
+            <ul>
+                <li><img src="../img/xihu1.jpg" /></li>
+                <li><img src="../img/pubu4.jpg" /></li>
+                <li><img src="../img/dujiangyan1.jpg" /></li>
+                <li><img src="../img/jiuzhaigou2.jpg" /></li>
+                <li><img src="../img/taishan1.jpg" /></li>
+                <li><img src="../img/dishini1.png" /></li>
+            </ul>
+            <div id="dir">
+                <a href="##">&lt;</a>
+                <a href="##">&gt;</a>
+            </div>
+            <div id="circular">
+                <a href="##" class="active"></a>
+                <a href="##"></a>
+                <a href="##"></a>
+                <a href="##"></a>
+                <a href="##"></a>
+                <a href="##"></a>
+            </div>
+        </div>
+    </div>
+    <div class="spotinformation">
+        <div class="spotinf">
+            <span><img src="../img/xinxi3.png"></span>
+            <p>本单元主要向大家提供了我国部分省市的景点信息。希望通过景区信息的展示让您更加了解相应的景区，以便于您日后的旅游出行。
+            </p>
+
+        </div>
+    </div>
+    <div class="recommend">
+        <img src="../img/xinxi5.png">
+    </div>
+    <div class="main">
+        <div class="imain">
+            <div class="main1">
+                <span>01</span>
+                <span>广西·德天跨国瀑布</span>
+            </div>
+            <p>德天瀑布位于广西壮族自治区崇左市大新县硕龙镇德天村,中国与越南边境处的归春河上游,瀑布气势磅礴、蔚为壮观,与紧邻的越南板约瀑布（“Bản Giốc & Đức
+                Thiên”）相连,是亚洲第一、世界第四大跨国瀑布,年均水流量约为贵州黄果树瀑布的三倍,为中国国家AAAAA级旅游景区,还是《酒是故乡醇》和《花千骨》的外景拍摄地,神奇而美妙.</p>
+            <span class = "big"><img src="../img/pubu3.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>02</span>
+                <span>四川·九寨沟</span>
+            </div>
+            <p>九寨沟：世界自然遗产、国家重点风景名胜区、国家AAAAA级旅游景区、国家级自然保护区、国家地质公园、世界生物圈保护区网络，是中国第一个以保护自然风景为主要目的的自然保护区。九寨沟位于四川省阿坝藏族羌族自治州九寨沟县境内，地处青藏高原、川西高原、山地向四川盆地过渡地带，南距成都市300多公里，是一条纵深50余千米的山沟谷地，总面积64297公顷，森林覆盖率超过80%。
+            </p>
+            <span class = "big"><img src="../img/jiuzhaigou4.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>03</span>
+                <span>山东·泰山</span>
+            </div>
+            <p>泰山，又名岱山、岱宗、岱岳、东岳、泰岳，为中国著名的五岳之一，位于山东省中部，绵亘于泰安、济南、淄博三市之间，总面积2.42万公顷。主峰玉皇顶海拔1545米，气势雄伟磅礴，有“五岳之首”、“五岳之长”、“五岳之尊”、“天下第一山”之称。是世界自然与文化遗产，世界地质公园，国家AAAAA级旅游景区，国家级风景名胜区，全国重点文物保护单位，全国文明风景旅游区。
+            </p>
+            <span class = "big"><img src="../img/taishan3.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>04</span>
+                <span>四川·都江堰</span>
+            </div>
+            <p>都江堰是世界文化遗产（2000年被联合国教科文组织列入“世界文化遗产”名录）、世界自然遗产（四川大熊猫栖息地）、全国重点文物保护单位、国家级风景名胜区、国家AAAAA级旅游景区。都江堰风景区主要有伏龙观、二王庙、安澜索桥、玉垒关、离堆公园、玉垒山公园、玉女峰、灵岩寺、普照寺、翠月湖、都江堰水利工程等。
+            </p>
+            <span class = "big"><img src="../img/dujiangyan2.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>05</span>
+                <span>浙江·西湖</span>
+            </div>
+            <p>西湖，位于浙江省杭州市西湖区龙井路1号，杭州市区西部，景区总面积49平方千米，汇水面积为21.22平方千米，湖面面积为6.38平方千米.西湖有100多处公园景点，有“西湖十景”、“新西湖十景”、“三评西湖十景”之说，有60多处国家、省、市级重点文物保护单位和20多座博物馆，有断桥、雷峰塔、钱王祠、净慈寺、苏小小墓等景点。
+            </p>
+            <span class = "big"><img src="../img/xihu3.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>06</span>
+                <span>上海·迪士尼</span>
+            </div>
+            <p>上海迪士尼乐园拥有七大主题园区：米奇大街、奇想花园、探险岛、宝藏湾、明日世界、梦幻世界、玩具总动员 ；两座主题酒店：上海迪士尼乐园酒店、玩具总动员酒店；一座地铁站：迪士尼站；并有多个全球首发游乐项目。</p>
+            <span class = "big"><img src="../img/dishini4.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>07</span>
+                <span>黑龙江·镜泊湖</span>
+            </div>
+            <p>镜泊湖，中国最大、世界第二大高山堰塞湖，位于中国黑龙江省牡丹江市宁安市境西南部的松花江支流牡丹江干流上，距宁安市50公里，海拔 351米。湖水深度平均为40米。常年一般水位 最高353.65米，最低345.61米，年平均流量每秒 9.2立方米至10立方米，蓄水量16.25 亿立方米。注入湖泊的河流除牡丹江干流外，还有大梨树沟河、尔站西沟河等小河流。</p>
+            <span class = "big"><img src="../img/jingpohu.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>08</span>
+                <span>吉林·长白山</span>
+            </div>
+            <p>长白山景区位于吉林省延边朝鲜族自治州安图县二道白河镇池北区东南部，东南与朝鲜毗邻，坐落于长白山北坡，距长白山34公里，距双目峰中朝边境65公里，区域面积52.42平方公里。长白山景区是国家AAAAA级旅游景区，主峰长白山多白色浮石与积雪而得名，素有“千年积雪万年松，直上人间第一峰”的美誉。</p>
+            <span class = "big"><img src="../img/changbaishan.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>09</span>
+                <span>沈阳·故宫</span>
+            </div>
+            <p>沈阳故宫位于辽宁省沈阳市中心，是中国仅存的两大宫殿建筑群之一，又称盛京皇宫，为清朝初期的皇宫。沈阳故宫始建于努尔哈赤时期的1625年，建成于皇太极时期的1636年。清朝迁都北京后，故宫被称作“陪都宫殿”、“留都宫殿”。后来就称之为沈阳故宫。后经康熙、乾隆时期的改建、增建,形成了今日有宫殿亭台楼阁斋堂等建筑100余座、500余间，占地面积达6万平方米的格局面貌。</p>
+            <span class = "big"><img src="../img/shenyanggugong.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>10</span>
+                <span>北京·颐和园</span>
+            </div>
+            <p>颐和园，中国清朝时期皇家园林，前身为清漪园，坐落在北京西郊，距城区15公里，占地约290公顷，与圆明园毗邻。它是以昆明湖、万寿山为基址，以杭州西湖为蓝本，汲取江南园林的设计手法而建成的一座大型山水园林，也是保存最完整的一座皇家行宫御苑，被誉为“皇家园林博物馆”，也是国家重点旅游景点。</p>
+            <span class = "big"><img src="../img/yiheyuan.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>11</span>
+                <span>河北·承德避暑山庄</span>
+            </div>
+            <p>承德避暑山庄，是中国著名的旅游景点，也是世界文化遗产，国家AAAAA级旅游景区，全国重点文物保护单位，中国四大名园之一。
+                承德避暑山庄又名“承德离宫”或“热河行宫”，位于河北省承德市中心北部，武烈河西岸一带狭长的谷地上，是清代皇帝夏天避暑和处理政务的场所。
+                避暑山庄始建于1703年，历经清康熙、雍正、乾隆三朝，耗时89年建成。避暑山庄以朴素淡雅的山村野趣为格调，取自然山水之本色，吸收江南塞北之风光，成为中国现存占地最大的古代帝王宫苑。</p>
+            <span class = "big"><img src="../img/bishushanzhuang.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>12</span>
+                <span>山西·五台山</span>
+            </div>
+            <p>五台山，国家AAAAA级旅游景区，国家重点风景名胜区，国家地质公园，国家自然与文化双重遗产，中华十大名山，中国佛教四大名山，世界五大佛教圣地。五台山是中国唯一一个青庙黄庙共处的佛教道场。截至2017年，五台山有寺院47处，台内39处，台外8处，其中多敕建寺院，多朝皇帝前来参拜。著名的有：显通寺、塔院寺、菩萨顶、南山寺、黛螺顶、广济寺、万佛阁等。</p>
+            <span class = "big"><img src="../img/wutaishan.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>13</span>
+                <span>陕西·华山</span>
+            </div>
+            <p>华山（Mount Hua）古称“西岳”，雅称“太华山”，为中国著名的五岳之一，中华文明的发祥地，“中华”和“华夏”之“华”，就源于华山。华山是第一批国家重点风景名胜区，国家AAAAA级旅游景区，全国重点文物保护单位，国家地质公园。</p>
+            <span class = "big"><img src="../img/huashan.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>14</span>
+                <span>江苏·苏州园林</span>
+            </div>
+            <p>苏州古典园林，简称苏州园林，是世界文化遗产、国家AAAAA级旅游景区，中国十大风景名胜之一。苏州古典园林素有“园林之城”之称，享有“江南园林甲天下，苏州园林甲江南”之美誉，誉为“咫尺之内再造乾坤”。苏州古典园林始于春秋时期吴国建都姑苏时，形成于五代，成熟于宋代，兴旺鼎盛于明清。到清末苏州已有各色园林170多处，现保存完整的有60多处，对外开放的有19处，主要有沧浪亭、狮子林、拙政园、留园、网师园、怡园等园林。</p>
+            <span class = "big"><img src="../img/suzhouyuanlin.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>15</span>
+                <span>安徽·黄山</span>
+            </div>
+            <p>黄山：世界文化与自然双重遗产，世界地质公园，国家AAAAA级旅游景区，国家级风景名胜区，全国文明风景旅游区示范点，中华十大名山，天下第一奇山。
+                黄山位于安徽省南部黄山市境内，有72峰，主峰莲花峰海拔1864米，与光明顶、天都峰并称三大黄山主峰，为36大峰之一。黄山是安徽旅游的标志，是中国十大风景名胜唯一的山岳风光。</p>
+            <span class = "big"><img src="../img/huangshan.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>16</span>
+                <span>河南·云台山</span>
+            </div>
+            <p>云台山风景区，又名云台山、云台山风景名胜区，位于河南省焦作市修武县境内，含红石峡、潭瀑峡、泉瀑峡、青龙峡、峰林峡、子房湖、茱萸峰、叠彩洞、猕猴谷、百家岩、万善寺等主要景点。云台山风景区因山势险峻，峰壑之间常年云锁雾绕而得名。云台山主峰茱萸峰海拔1308米，有落差314米的云台天瀑，在景区泉瀑峡的尽端，是中国发现的落差最大的瀑布之一</p>
+            <span class = "big"><img src="../img/yuntaishan.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>17</span>
+                <span>湖北武汉·黄鹤楼</span>
+            </div>
+            <p>黄鹤楼位于湖北省武汉市长江南岸的武昌蛇山之巅，濒临万里长江，是国家5A级旅游景区，“江南三大名楼”之一，自古享有“天下江山第一楼“和”天下绝景“之称。黄鹤楼是武汉市标志性建筑，与晴川阁、古琴台并称“武汉三大名胜”。</p>
+            <span class = "big"><img src="../img/huanghelou.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>18</span>
+                <span>福建·武夷山</span>
+            </div>
+            <p>武夷山（古属建宁府崇安县）福建省南平市下辖县级市，位于福建省西北部，  东连浦城，南接建阳，西临光泽，北与江西省铅山县毗邻。全境东西宽70千米，南北长72.5千米。福建、江西两省交界处，属中亚热带地区，是福建省唯一以名山命名的新兴旅游城市。</p>
+            <span class = "big"><img src="../img/wuyishan.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>19</span>
+                <span>江西·井冈山</span>
+            </div>
+            <p>井冈山：地处湘东-赣西边界，万洋山（为罗霄山脉中段）的北支，据传在东汉年间就已经有人在井冈山居住了。秦朝设郡县制时，井冈山为九江郡庐陵县属地。
+                井冈山距井冈山市新城区（红星街道）35公里，距吉安市吉州区约130公里处。</p>
+            <span class = "big"><img src="../img/jinggangshan.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>20</span>
+                <span>湖南·岳阳楼</span>
+            </div>
+            <p>岳阳楼位于湖南省岳阳市古城西门城墙之上，下瞰洞庭，前望君山，自古有“洞庭天下水，岳阳天下楼”之美誉，与湖北武汉黄鹤楼、江西南昌滕王阁并称为“江南三大名楼”。1988年1月被国务院确定为全国重点文物保护单位。
+                岳阳楼主楼高19.42米，进深14.54米，宽17.42米，为三层、四柱、飞檐、盔顶、纯木结构。楼中四根楠木金柱直贯楼顶，周围绕以廊、枋、椽、檩互相榫合，结为整体。</p>
+            <span class = "big"><img src="../img/yueyanglou.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>21</span>
+                <span>贵州·黄果树瀑布</span>
+            </div>
+            <p>黄果树瀑布，即黄果树大瀑布。古称白水河瀑布，亦名“黄葛墅”瀑布或“黄桷树”瀑布，因本地广泛分布着“黄葛榕”而得名。   位于中国贵州省安顺市镇宁布依族苗族自治县，属珠江水系西江干流南盘江支流北盘江支流打帮河的支流可布河下游白水河段水系，为黄果树瀑布群中规模最大的一级瀑布，是世界著名大瀑布之一。以水势浩大著称。瀑布高度为77.8米，其中主瀑高67米；瀑布宽101米，其中主瀑顶宽83.3米。黄果树瀑布属喀斯特地貌中的侵蚀裂典型瀑布。</p>
+            <span class = "big"><img src="../img/huangguoshupubu.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>22</span>
+                <span>云南·西双版纳</span>
+            </div>
+            <p>西双版纳有中国唯一的热带雨林自然保护区，是国家级生态示范区、国家级风景名胜区、联合国生物多样性保护圈成员，植物种类占全国的1/6，动物种类占全国的1/4，森林覆盖率80.8%，是中国第二大天然橡胶生产基地，大叶种茶的原生地、普洱茶的故乡，建有1个5A级景区，9个4A级景区，西双版纳以神奇的热带雨林自然景观和少数民族风情而闻名于世，是中国的热点旅游城市之一。</p>
+            <span class = "big"><img src="../img/xishuangbanna.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>23</span>
+                <span>青海·青海湖</span>
+            </div>
+            <p>青海湖，藏语名为“措温布”（意为“青色的海”）。位于青藏高原东北部、青海省境内，中国最大的内陆湖、咸水湖。由祁连山脉的大通山、日月山与青海南山之间的断层陷落形成。</p>
+            <span class = "big"><img src="../img/qinghaihu.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>24</span>
+                <span>西藏·布达拉宫</span>
+            </div>
+            <p>布达拉宫依山垒砌，群楼重叠，是藏式古建筑的杰出代表（据说源于桑珠孜宗堡），中华民族古建筑的精华之作，是第五套人民币50元纸币背面的风景图案   。主体建筑分为白宫和红宫两部分。宫殿高200余米，外观13层，内为9层。布达拉宫前辟有布达拉宫广场，是世界上海拔最高的城市广场。</p>
+            <span class = "big"><img src="../img/budalagong.jpg"></span>
+        </div>
+        <div class="imain">
+            <div class="main1">
+                <span>25</span>
+                <span>新疆·天池</span>
+            </div>
+            <p>天山天池，世界自然遗产，国家AAAAA级旅游景区，国家地质公园，国家重点风景名胜区，全国文明风景旅游区，国际人与自然生物圈保护区，中国最佳旅游去处，最佳资源保护的中国十大风景名胜区，中国十大魅力休闲旅游湖泊。</p>
+            <span class = "big"><img src="../img/tianchi.jpg"></span>
+        </div>
+        
+
+    </div>
+    <div class="footer">
+            <dl><img src="../img/xinxi2.png"></dl>
+            <ul>
+                <li><span class="sp"><i class="iconfont">&#xe535;</i></span><a href="#">官方手Q账号</a></li>
+                <li><span class="sp"><i class="iconfont">&#xe681;</i></span><a href="#">官方微信账号</a></li>
+                <li><span class="sp"><i class="iconfont">&#xe503;</i></span><a href="#">兴趣部落</a></li>
+                <li><span class="sp"><i class="iconfont">&#xe609;</i></span><a href="#">官方空间</a></li>
+                <li><span class="sp"><i class="iconfont">&#xe534;</i></span><a href="#">话费开通专区</a></li>
+                <li><span class="sp"><i class="iconfont">&#xe60a;</i></span><a href="#">兑换中心</a></li>
+                <li><span class="sp"><i class="iconfont">&#xe620;</i></span><a href="#">客服中心</a></li>
+            </ul>
+        </div>
+        <div id="designer">
+            <span>Designed&nbsp;By&nbsp;DZH&nbsp;From&nbsp;JK1505</span>
+        </div>
+</body>
+
+</html>
+<script src="../js/common.js"></script>
+<script>
+    function Play() {
+        this.banner = document.getElementById("banner");
+        this.oUl = this.banner.getElementsByTagName("ul")[0];
+        this.aLi = this.oUl.getElementsByTagName("li");
+        this.aDir = document.querySelectorAll("#dir>a");
+        this.aA = document.querySelectorAll("#circular>a");
+        this.iw = this.aLi[0].offsetWidth;
+        this.iNow = 0;
+        this.timer = null;
+        this.init();
+    }
+    Play.prototype = {
+        init: function () {
+
+            this.direction1();
+            this.direction2();
+            this.autoplay();
+            var li = this.aLi[0].cloneNode(true);
+            this.oUl.appendChild(li);
+            this.oUl.style.width = this.aLi.length * this.iw + 'px';
+            this.onmouseover();
+            this.onmouseout();
+            this.circulover();
+
+        },
+
+        direction1: function () {
+            this.aDir[0].addEventListener("click", this.direction1callback.bind(this))
+        },
+        direction1callback: function () {
+            if (this.iNow == 0) {
+                this.iNow = this.aLi.length - 2;
+                this.oUl.style.left = -(this.aLi.length - 1) * this.iw + 'px';
+            } else {
+                this.iNow--;
+            }
+            this.toImg();
+        },
+        direction2: function () {
+            this.aDir[1].addEventListener("click", this.direction2callback.bind(this))
+        },
+        direction2callback: function () {
+            if (this.iNow == this.aLi.length - 1) {
+                this.iNow = 1;
+                this.oUl.style.left = 0;
+            } else {
+                this.iNow++;
+            }
+
+            this.toImg();
+        },
+
+        onmouseover: function () {
+            this.banner.addEventListener("mouseover", this.onmouseovercallback.bind(this))
+        },
+        onmouseovercallback: function () {
+            clearInterval(this.timer);
+        },
+        onmouseout: function () {
+            this.banner.addEventListener("mouseout", this.onmouseoutcallback.bind(this));
+        },
+        onmouseoutcallback: function () {
+            this.autoplay();
+        },
+        circulover: function () {
+            for (var i = 0; i < this.aA.length; i++) {
+                this.aA[i].index = i;
+                this.aA[i].addEventListener("mouseover", this.circlecallback.bind(this, this.aA[i]))
+            }
+        },
+        circlecallback: function (that) {
+            for (var j = 0; j < this.aA.length; j++) {
+                this.aA[j].className = '';
+            }
+            that.className = 'active';
+            this.iNow = that.index;
+            this.toImg();
+        },
+        autoplay: function () {
+            this.timer = setInterval(this.autoplaycallback.bind(this), 2000)
+        },
+        autoplaycallback: function () {
+            if (this.iNow == this.aLi.length - 1) {
+                this.iNow = 1;
+                this.oUl.style.left = 0;
+            } else {
+                this.iNow++;
+            }
+
+            this.toImg();
+        },
+        toImg: function () {
+            for (var i = 0; i < this.aA.length; i++) {
+                this.aA[i].className = '';
+            }
+            this.aA[this.iNow == this.aLi.length - 1 ? 0 : this.iNow].className = 'active';
+
+            move(this.oUl, {
+                left: -this.iNow * this.iw
+            });
+
+        }
+
+    }
+    new Play();
+    // 返回顶部
+    window.onscroll = function () {
+        var ovip = document.getElementById("vip");
+        // console.log(ovip);
+        // var t = document.documentElement.scrollTop || document.body.scrollTop;
+        //    console.log(t);
+        ovip.addEventListener("click", function () {
+            document.documentElement.scrollTop = 0;
+        })
+    }
+</script>
